@@ -11,6 +11,8 @@ import { GestionOperadorComponent } from './components/gestion-operador/gestion-
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PrincipalAdminComponent } from './components/administrador/principal-admin/principal-admin.component';
+import { GestionAdminComponent } from './components/administrador/gestion-admin/gestion-admin.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -20,6 +22,8 @@ import { MatIconModule } from '@angular/material/icon';
     AppComponent,
     GestionOperadorComponent,
     DashboardComponent,
+    PrincipalAdminComponent,
+    GestionAdminComponent,
 
   ],
   imports: [

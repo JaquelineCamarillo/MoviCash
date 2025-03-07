@@ -1,0 +1,270 @@
+/* Estilo base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Contenedor principal */
+.container {
+  width: 70%;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+/*h1 {
+  text-align: center;
+  color: #333;
+}*/
+
+/* Barra de búsqueda */
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.search-bar input {
+  width: 75%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+}
+
+/* Formulario compacto */
+.admin-form {
+  margin-bottom: 20px;
+}
+
+.admin-form h2 {
+  text-align: center;
+}
+
+/* Agrupar campos en filas */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.form-group label {
+  display: block;
+  color: #333;
+}
+
+/* Efecto de placeholder animado */
+.input-container {
+  position: relative;
+}
+
+.input-container input,
+.input-container select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-container .placeholder {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #aaa;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.input-container input:focus + .placeholder,
+.input-container input:not(:placeholder-shown) + .placeholder {
+  top: 0px;
+  font-size: -0px;
+
+}
+
+/* Asterisco rojo para campos obligatorios */
+.required {
+  color: red;
+}
+
+/* Mensajes de error */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Botones */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.modify-btn,
+.delete-btn {
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+.modify-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.modify-btn:hover {
+  background-color: #218838;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Tabla */
+.admin-list {
+  margin-top: 30px;
+}
+
+.admin-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-list th,
+.admin-list td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-list th {
+  background-color: #007bff;
+  color: white;
+}
+
+.admin-list td {
+  background-color: #f9f9f9;
+}
+
+.edit-btn {
+  padding: 5px 10px;
+  background-color: #ffc107;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+/* Botón de cancelar */
+.cancel-btn {
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #6c757d;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Estilos generales */
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+  color: #007bff;
+  text-align: left;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.add-btn,
+.remove-btn {
+  padding: 8px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.remove-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+}
