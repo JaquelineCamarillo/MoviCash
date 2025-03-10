@@ -15,11 +15,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     GestionOperadorComponent,
     DashboardComponent,
+    
 
   ],
   imports: [
