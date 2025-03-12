@@ -9,8 +9,7 @@ import { CambioAdministradoresComponent } from './components/cambio-administrado
 
 import { PrincipalAdminComponent } from './components/administrador/principal-admin/principal-admin.component';
 import { GestionAdminComponent } from './components/administrador/gestion-admin/gestion-admin.component';
-<<<<<<< HEAD
-=======
+
 import { GestionOrdenantesComponent } from './components/ordenantes/gestion-ordenantes/gestion-ordenantes.component';
 import { DepositoCuentaComponent } from './components/ordenantes/deposito-cuenta/deposito-cuenta.component';
 import { PantallaBuenIntentoComponent } from './components/pantalla-buen-intento/pantalla-buen-intento.component';
@@ -18,14 +17,12 @@ import { PantallaVerificacionCodigoComponent } from './components/pantalla-verif
 import { PantallaRecuperacionComponent } from './components/pantalla-recuperacion/pantalla-recuperacion.component';
 import { GestionOperadorComponent } from './components/gestion-operador/gestion-operador.component';
 import { AuthGuard } from './auth.guard';
->>>>>>> ad875f6b7a46fb482313d31bb5d7ff41b1db4df8
 
 const routes: Routes = [
   { path: 'principal-admin', component: PrincipalAdminComponent},
   { path: 'gestion-admin', component: GestionAdminComponent},
   { path: 'dashboard', component: DashboardComponent },
-<<<<<<< HEAD
-=======
+
   {path: 'gestion-ordenantes', component: GestionOrdenantesComponent},
   { path: 'gestion-operador', component: GestionOperadorComponent },
   {path: 'deposito', component: DepositoCuentaComponent},
@@ -44,7 +41,7 @@ const routes: Routes = [
     canActivate: [AuthGuard], 
     data: { role: 'Ordenante' } 
   },
->>>>>>> ad875f6b7a46fb482313d31bb5d7ff41b1db4df8
+
   { path: 'pantalla-login', component: PantallaLoginComponent }, // Agrega la ruta
   { path: '', redirectTo: '/pantalla-login', pathMatch: 'full' } // Ruta por defecto
 ];
