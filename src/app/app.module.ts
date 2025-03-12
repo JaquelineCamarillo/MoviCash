@@ -18,6 +18,13 @@ import { GestionAdminComponent } from './components/administrador/gestion-admin/
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { DepositoCuentaComponent } from './components/ordenantes/deposito-cuenta/deposito-cuenta.component';
+//
+
+import { PantallaBuenIntentoComponent } from './components/pantalla-buen-intento/pantalla-buen-intento.component';
+import { PantallaLoginComponent } from './components/pantalla-login/pantalla-login.component';
+import { PantallaRecuperacionComponent } from './components/pantalla-recuperacion/pantalla-recuperacion.component';
+import { PantallaVerificacionCodigoComponent } from './components/pantalla-verificacion-codigo/pantalla-verificacion-codigo.component';
+import { AdvertenciaComponent } from './components/advertencia/advertencia.component';
 
 
 
@@ -29,7 +36,12 @@ import { DepositoCuentaComponent } from './components/ordenantes/deposito-cuenta
     PrincipalAdminComponent,
     GestionAdminComponent,
     GestionOrdenantesComponent,
-    DepositoCuentaComponent
+    DepositoCuentaComponent,
+    PantallaBuenIntentoComponent,
+    PantallaLoginComponent,
+    PantallaRecuperacionComponent,
+    PantallaVerificacionCodigoComponent,
+    AdvertenciaComponent
 
   ],
   imports: [

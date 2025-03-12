@@ -1,1 +1,209 @@
-<p>gestion-operador works!</p>
+<div class="container">
+  <!-- Barra de navegación -->
+  <header class="header">
+    <div class="header-container">
+      <img src="/client/public/logo.svg" alt="Logo MoviCash" class="logo">
+      <h1 class="header-title">Gestión de Operadores</h1>
+      <nav class="header-nav">
+        <a href="#">Inicio</a>
+        <a href="#">Cuenta de Ahorro</a>
+        <a href="#">Operadores</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Barra de búsqueda -->
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar operador..." [(ngModel)]="searchQuery" (input)="search()">
+    <button>Buscar</button>
+  </div>
+
+  <!-- Formulario de registro -->
+  <div class="operador-form">
+    <h2>{{ isEditing ? 'Editar Operador' : 'Registrar Operador' }}</h2>
+    <form (ngSubmit)="onSubmit()">
+
+      <!-- Sección de Datos Personales -->
+      <div class="section-title">Datos Personales</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>RFC <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="text" [(ngModel)]="operador.RFC" name="RFC" required>
+          </div>
+          <div *ngIf="errorMessage && !operador.RFC" class="error-message">{{ errorMessage }}</div>
+        </div>
+        <div class="form-group">
+          <label>Nombre <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="text" [(ngModel)]="operador.NombrePersonal" name="NombrePersonal" required>
+          </div>
+          <div *ngIf="errorMessage && !operador.NombrePersonal" class="error-message">{{ errorMessage }}</div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Apellido Paterno <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="text" [(ngModel)]="operador.ApPaterno" name="ApPaterno" required>
+          </div>
+          <div *ngIf="errorMessage && !operador.ApPaterno" class="error-message">{{ errorMessage }}</div>
+        </div>
+        <div class="form-group">
+          <label>Apellido Materno</label>
+          <div class="input-container">
+            <input type="text" [(ngModel)]="operador.ApMaterno" name="ApMaterno">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Sexo <span class="required">*</span></label>
+          <div class="input-container">
+            <select [(ngModel)]="operador.Sexo" name="Sexo" required>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Fecha de Nacimiento <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="date" [(ngModel)]="operador.FechaNacimiento" name="FechaNacimiento" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección de Credenciales -->
+      <div class="section-title">Credenciales</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Correo Electrónico <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="email" [(ngModel)]="operador.CorreoElectronico" name="CorreoElectronico" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Contraseña <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="password" [(ngModel)]="operador.Password" name="Password" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección de Dirección -->
+      <div class="section-title">Dirección</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Número Interior</label>
+          <div class="input-container">
+            <input type="text" [(ngModel)]="operador.Direccion.NumeroInterior" name="NumeroInterior">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Número Exterior <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="text" [(ngModel)]="operador.Direccion.NumeroExterior" name="NumeroExterior" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Calle <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="text" [(ngModel)]="operador.Direccion.Calle" name="Calle" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Colonia <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="text" [(ngModel)]="operador.Direccion.Colonia" name="Colonia" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Ciudad <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="text" [(ngModel)]="operador.Direccion.Ciudad" name="Ciudad" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección de Contacto -->
+      <div class="section-title">Teléfonos</div>
+      <div *ngFor="let tel of operador.Telefono; let i = index" class="form-row">
+        <div class="form-group">
+          <label>Teléfono {{ i + 1 }} <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="text" [(ngModel)]="tel.Numero" name="Telefono{{i}}" required>
+          </div>
+        </div>
+        <button type="button" class="remove-btn" (click)="removePhone(i)">Eliminar</button>
+      </div>
+      <button type="button" class="add-btn" (click)="addPhone()">Agregar Teléfono</button>
+
+      <!-- Estado de Cuenta -->
+      <div class="section-title">Estado de Cuenta</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Estado <span class="required">*</span></label>
+          <div class="input-container">
+            <select [(ngModel)]="operador.Estado" name="Estado" required>
+              <option value="Activo">Activo</option>
+              <option value="Inactivo">Inactivo</option>
+              <option value="Bloqueado">Bloqueado</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Fecha de Registro <span class="required">*</span></label>
+          <div class="input-container">
+            <input type="date" [(ngModel)]="operador.FechaCreacion" name="FechaCreacion" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="form-actions">
+        <button class="modify-btn" type="submit">{{ isEditing ? 'MODIFICAR' : 'AGREGAR' }}</button>
+        <button class="cancel-btn" *ngIf="isEditing" (click)="cancelEdit()">CANCELAR</button>
+      </div>
+      
+    </form>
+  </div>
+
+  <!-- Tabla de Operadores -->
+  <div class="operador-list">
+    <h2>Lista de Operadores</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>RFC</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Fecha de Registro</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let operador of filteredOperadores">
+          <td>{{ operador.RFC }}</td>
+          <td>{{ operador.NombrePersonal }} {{ operador.ApPaterno }} {{ operador.ApMaterno }}</td>
+          <td>{{ operador.CorreoElectronico }}</td>
+          <td>{{ operador.FechaCreacion }}</td>
+          <td>{{ operador.Estado }}</td>
+          <td>
+            <button class="edit-btn" (click)="editOperador(operador)">Editar</button>
+            <button class="delete-btn" (click)="deleteOperador(operador)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
