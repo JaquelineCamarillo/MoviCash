@@ -1,0 +1,22 @@
+<div class="dialog-container">
+    <h2>Dirección del Ordenante</h2>
+    <form>
+      <div class="form-group">
+        <label>Calle</label>
+        <input type="text" [(ngModel)]="calle">
+      </div>
+      <div class="form-group">
+        <label>Número</label>
+        <input type="text" [(ngModel)]="numero">
+      </div>
+      <div class="form-group">
+        <label>Ciudad</label>
+        <input type="text" [(ngModel)]="ciudad">
+      </div>
+      <div class="button-group">
+        <button type="button" (click)="guardarCambios()">Guardar</button>
+        <button type="button" (click)="cerrarDialog()">Cerrar</button>
+      </div>
+    </form>
+  </div>
+  

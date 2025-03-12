@@ -1,0 +1,72 @@
+<header class="header">
+  <div class="header-container">
+    <img src="../../../img/LogoMoviCash.png" alt="Logo MoviCash" style="width:150px; height:auto;">
+      <h1 class="header-title">Gestión de Ordenantes</h1>
+      <nav class="header-nav">
+          <ul class="nav-list">
+            <li><a routerLink="/gestion-ordenantes">Inicio</a></li>
+            <li><a routerLink="/deposito">Cuenta de Ahorro</a></li>
+          </ul>
+      </nav>
+  </div>
+</header>
+
+<div class="container">
+  <h3>Ordenante 1</h3>
+  <div class="search-container">
+      <input type="text" placeholder="Buscar ordenante..." class="search-input" />
+      <button class="search-button" (click)="buscarOrdenante()">🔍 Search</button>
+  </div>
+
+  <form class="ordenante-form">
+      <div class="form-group">
+          <input type="text" placeholder="Nombre">
+          <input type="text" placeholder="Apellido Paterno">
+          <input type="text" placeholder="Apellido Materno">
+      </div>
+      <div class="form-group">
+          <input type="text" placeholder="Sexo">
+          <input type="date" placeholder="Fecha Nacimiento">
+          <button type="button" class="btn-action" (click)="mostrarCuentaPantalla()">CUENTA</button>
+          <button type="button" class="btn-action" (click)="mostrarDireccionPantalla()">DIRECCIÓN</button>
+      </div>
+      <div class="form-group">
+        <label for="fechaRegistro"><small>Fecha de Registro</small></label>
+        <input type="date" id="fechaRegistro" placeholder="Fecha Registro">
+        <input type="text" placeholder="RFC_Operador">
+        <input type="text" placeholder="Teléfono">
+    </div>
+    <div class="form-group">
+        <label for="fechaUltimaMod"><small>Fecha Última Modificación</small></label>
+        <input type="date" id="fechaUltimaMod" placeholder="Fecha Última Modificación">
+    </div>
+      <div class="button-group">
+          <button type="submit" class="btn-modify" (click)="modificarOrdenante()">MODIFICAR</button>
+          <button type="button" class="btn-delete" (click)="eliminarOrdenante()">ELIMINAR</button>
+      </div>
+  </form>
+
+  <div class="container">
+    <h3>Lista de ordenantes</h3>
+    <table class="ordenantes-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>RFC</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ordenante of ordenantes">
+                <td>{{ ordenante.NombreOrdenante }}</td>
+                <td>{{ ordenante.ApPaterno }}</td>
+                <td>{{ ordenante.ApMaterno }}</td>
+                <td>{{ ordenante.RFC }}</td>
+                <td>{{ ordenante.Telefono[0].Numero }}</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
