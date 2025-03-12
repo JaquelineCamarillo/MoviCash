@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprobación/Rechazo de Transacciones</title>
+    <link rel="stylesheet" href="bitacora.component.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-container">
+                <h1 class="header-title">Aprobación/Rechazo de Transacciones</h1>
+            </div>
+        </div>
+    
+        <!-- Formulario de transacciones -->
+        <div class="contenedorLogin" id="transaccionesForm">
+            <div class="section">
+                <h3>Listado de Transacciones Pendientes</h3>
+                <table class="transacciones-table">
+                    <caption>Listado de Transacciones Pendientes</caption>
+                    <thead>
+                        <tr>
+                            <th>ID Transacción</th>
+                            <th>Usuario</th>
+                            <th>Monto</th>
+                            <th>Tipo de Transacción</th>
+                            <th>Fecha y Hora de Solicitud</th>
+                            <th>Acción</th>
+                            <th>Detalles</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-list">
+                        <!-- Ejemplo de fila de transacción -->
+                        <tr>
+                            <td>TX001</td>
+                            <td>Juan Pérez</td>
+                            <td>$120.50</td>
+                            <td>Compra</td>
+                            <td>2025-03-10 14:30</td>
+                            <td>
+                                <button class="btn-action" onclick="approveTransaction('TX001')">Aprobar</button>
+                                <button class="btn-action" onclick="rejectTransaction('TX001')">Rechazar</button>
+                            </td>
+                            <td><button class="btn-details" onclick="showTransactionDetails('TX001')">Ver Detalles</button></td>
+                        </tr>
+                        <tr>
+                            <td>TX002</td>
+                            <td>Ana García</td>
+                            <td>$50.00</td>
+                            <td>Devolución</td>
+                            <td>2025-03-10 15:00</td>
+                            <td>
+                                <button class="btn-action" onclick="approveTransaction('TX002')">Aprobar</button>
+                                <button class="btn-action" onclick="rejectTransaction('TX002')">Rechazar</button>
+                            </td>
+                            <td><button class="btn-details" onclick="showTransactionDetails('TX002')">Ver Detalles</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detalles de la transacción -->
+    <div id="transaction-info-container" class="info-container" style="display: none;">
+        <h3>Resumen de Transacción</h3>
+        <p><strong>ID Transacción:</strong> <span id="transaction-id">TX001</span></p>
+        <p><strong>Usuario:</strong> <span id="transaction-usuario">Juan Pérez</span></p>
+        <p><strong>Monto:</strong> <span id="transaction-monto">$120.50</span></p>
+        <p><strong>Tipo de Transacción:</strong> <span id="transaction-tipo">Compra</span></p>
+        <p><strong>Fecha y Hora de Solicitud:</strong> <span id="transaction-fecha">2025-03-10 14:30</span></p>
+        <p><strong>Estado:</strong> <span id="transaction-estado">Pendiente</span></p>
+        <p><strong>Comentarios:</strong> Revisar los datos del usuario antes de aprobar.</p>
+        <button class="btn-action" onclick="hideTransactionInfo()">Cerrar</button>
+    </div>
+
+    <script src="bitacora.component.ts"></script>
+    <script>
+        // Función para mostrar los detalles de la transacción
+        function showTransactionDetails(transactionId) {
+            document.getElementById('transaction-info-container').style.display = 'block';
+
+            // Puedes cambiar estos valores con datos reales
+            document.getElementById('transaction-id').innerText = transactionId;
+            document.getElementById('transaction-usuario').innerText = "Juan Pérez"; // Ejemplo
+            document.getElementById('transaction-monto').innerText = "$120.50"; // Ejemplo
+            document.getElementById('transaction-tipo').innerText = "Compra"; // Ejemplo
+            document.getElementById('transaction-fecha').innerText = "2025-03-10 14:30"; // Ejemplo
+        }
+
+        // Función para ocultar los detalles de la transacción
+        function hideTransactionInfo() {
+            document.getElementById('transaction-info-container').style.display = 'none';
+        }
+
+        // Funciones de acción para aprobar y rechazar la transacción
+        function approveTransaction(transactionId) {
+            alert("Transacción " + transactionId + " aprobada.");
+            // Lógica adicional para aprobar la transacción
+        }
+
+        function rejectTransaction(transactionId) {
+            alert("Transacción " + transactionId + " rechazada.");
+            // Lógica adicional para rechazar la transacción
+        }
+    </script>
+
+</body>
+</html>
