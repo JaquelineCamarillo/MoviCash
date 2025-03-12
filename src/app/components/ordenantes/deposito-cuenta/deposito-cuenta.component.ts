@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CuentaAhorroService } from '../../services/cuenta-ahorro.service';
+import { CuentaAhorroService } from '../../../services/cuenta-ahorro.service';
 import { CommonModule } from '@angular/common';
 //roy
 @Component({
