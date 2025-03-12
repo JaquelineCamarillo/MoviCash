@@ -22,7 +22,8 @@ const routes: Routes = [
   { path: 'principal-admin', component: PrincipalAdminComponent},
   { path: 'gestion-admin', component: GestionAdminComponent},
   { path: 'dashboard', component: DashboardComponent },
-
+  {path: 'bitacora', component: BitacoraComponent},
+  {path: 'cambio-admin', component: CambioAdministradoresComponent},
   {path: 'gestion-ordenantes', component: GestionOrdenantesComponent},
   { path: 'gestion-operador', component: GestionOperadorComponent },
   {path: 'deposito', component: DepositoCuentaComponent},
