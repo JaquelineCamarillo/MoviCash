@@ -27,6 +27,7 @@ import { PantallaVerificacionCodigoComponent } from './components/pantalla-verif
 import { AdvertenciaComponent } from './components/advertencia/advertencia.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,6 @@ import { AdvertenciaComponent } from './components/advertencia/advertencia.compo
     PantallaRecuperacionComponent,
     PantallaVerificacionCodigoComponent,
     AdvertenciaComponent
-
 
   ],
   imports: [
