@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PantallaLoginComponent } from './components/pantalla-login/pantalla-login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './operador/dashboard/dashboard.component';
 import { PrincipalAdminComponent } from './components/administrador/principal-admin/principal-admin.component';
 import { GestionAdminComponent } from './components/administrador/gestion-admin/gestion-admin.component';
 import { GestionOrdenantesComponent } from './components/ordenantes/gestion-ordenantes/gestion-ordenantes.component';
@@ -9,7 +9,7 @@ import { DepositoCuentaComponent } from './components/ordenantes/deposito-cuenta
 import { PantallaBuenIntentoComponent } from './components/pantalla-buen-intento/pantalla-buen-intento.component';
 import { PantallaVerificacionCodigoComponent } from './components/pantalla-verificacion-codigo/pantalla-verificacion-codigo.component';
 import { PantallaRecuperacionComponent } from './components/pantalla-recuperacion/pantalla-recuperacion.component';
-import { GestionOperadorComponent } from './components/gestion-operador/gestion-operador.component';
+import { GestionOperadorComponent } from './components/administrador/gestion-operador/gestion-operador.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
