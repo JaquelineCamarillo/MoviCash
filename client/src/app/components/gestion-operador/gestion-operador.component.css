@@ -1,0 +1,242 @@
+/* Estilos generales */
+body {
+  background-color: #f4f4f4;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Barra de navegación */
+.header {
+  background-color: #004d7a;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+  color: #f4a261;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #007ea7;
+  outline: none;
+}
+
+.search-bar button {
+  background-color: #007ea7;
+  color: white;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #005f76;
+}
+
+/* Formulario */
+.operador-form {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.operador-form h2 {
+  font-size: 22px;
+  color: #004d7a;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-weight: bold;
+  color: #004d7a;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #007ea7;
+  outline: none;
+}
+
+.form-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.modify-btn,
+.cancel-btn {
+  background-color: #007ea7;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.modify-btn:hover,
+.cancel-btn:hover {
+  background-color: #005f76;
+}
+
+.cancel-btn {
+  background-color: red;
+}
+
+.cancel-btn:hover {
+  background-color: darkred;
+}
+
+/* Tabla de Operadores */
+.operador-list {
+  margin-top: 40px;
+}
+
+.operador-list h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #004d7a;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+th {
+  background-color: #004d7a;
+  color: white;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+button.edit-btn,
+button.delete-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button.edit-btn {
+  background-color: #007ea7;
+  color: white;
+}
+
+button.edit-btn:hover {
+  background-color: #005f76;
+}
+
+button.delete-btn {
+  background-color: red;
+  color: white;
+}
+
+button.delete-btn:hover {
+  background-color: darkred;
+}

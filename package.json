@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@angular/material": "^19.1.5",
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "@angular/cli": "^19.1.8"
+  }
+}
