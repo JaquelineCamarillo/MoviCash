@@ -1,0 +1,220 @@
+/* Estilos generales */
+body {
+  background-color: #a1bcb9;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+
+/* Alinear barra de búsqueda a la derecha */
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-button {
+  background-color: #a0b2b9;
+  color: black;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #112d3e;
+}
+
+/* Header */
+.header {
+  background-color: #184059;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center; /* Alinea la animación y el título verticalmente */
+  justify-content: flex-start; /* Alinea todo a la izquierda */
+}
+
+
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left:150px ;
+}
+
+/* Navegación */
+.header-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav .nav-list li {
+  display: inline;
+}
+
+.header-nav .nav-list a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.header-nav .nav-list a:hover {
+  color: #f4a261;
+}
+
+/* Botón Logout */
+.logout-button {
+  background-color: red;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: darkred;
+}
+
+/* Formulario */
+.ordenante-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botones de acción */
+.btn-action {
+  background-color: #D7D7D9;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-action:hover {
+  background-color: #999;
+}
+
+/* Botones principales */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-modify {
+  background-color: #007ea7;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-delete {
+  background-color: red;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-modify:hover {
+  background-color: #003459;
+}
+
+.btn-delete:hover {
+  background-color: darkred;
+}
+
+/* Estilos para la tabla de ordenantes */
+.ordenantes-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.ordenantes-table th, .ordenantes-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.ordenantes-table th {
+  background-color: #184059;
+  color: white;
+  font-weight: bold;
+}
+
+.ordenantes-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.ordenantes-table tbody tr:hover {
+  background-color: #e0e0e0;
+  transition: 0.3s ease;
+}
+
+.animation-container {
+  margin-right: 20px; /* Espacio entre la animación y el título */
+  display: inline-block; /* Permite que la animación se alinee con el título */
+  vertical-align: middle; /* Alinea la animación verticalmente al centro */
+  width: 200px; /* Ajusta el tamaño de la animación */
+  max-width: 200px; /* Puedes ajustar el tamaño máximo de la animación */
+}
