@@ -12,6 +12,7 @@ body {
   padding: 20px;
 }
 
+
 /* Alinear barra de búsqueda a la derecha */
 .search-container {
   display: flex;
@@ -45,19 +46,17 @@ body {
   background-color: #184059;
   color: white;
   padding: 15px 20px;
+  display: flex;
+  align-items: center; /* Alinea la animación y el título verticalmente */
+  justify-content: flex-start; /* Alinea todo a la izquierda */
 }
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1100px;
-  margin: auto;
-}
+
 
 .header-title {
   font-size: 24px;
   font-weight: bold;
+  margin-left:150px ;
 }
 
 /* Navegación */
@@ -210,4 +209,12 @@ body {
 .ordenantes-table tbody tr:hover {
   background-color: #e0e0e0;
   transition: 0.3s ease;
+}
+
+.animation-container {
+  margin-right: 20px; /* Espacio entre la animación y el título */
+  display: inline-block; /* Permite que la animación se alinee con el título */
+  vertical-align: middle; /* Alinea la animación verticalmente al centro */
+  width: 200px; /* Ajusta el tamaño de la animación */
+  max-width: 200px; /* Puedes ajustar el tamaño máximo de la animación */
 }

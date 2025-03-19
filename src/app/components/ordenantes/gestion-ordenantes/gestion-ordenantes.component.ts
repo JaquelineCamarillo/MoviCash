@@ -1,67 +1,108 @@
 import { Component } from '@angular/core';
-//roy
+import { OrdenanteService } from '../../services/ordenante.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-gestion-ordenantes',
   templateUrl: './gestion-ordenantes.component.html',
   styleUrls: ['./gestion-ordenantes.component.css']
 })
 export class GestionOrdenantesComponent {
-  ordenantes = [
-    {
-      id: '1',
-      NombreOrdenante: 'Juan',
-      ApPaterno: 'Pérez',
-      ApMaterno: 'Gómez',
-      RFC: 'JUAN123',
-      Telefono: [{ Numero: '555-1234' }],
-      Cuenta: { NumeroCuenta: '12345678', Saldo: 5000 },
-      Direccion: { Calle: 'Av. Siempre Viva', Numero: '742', Ciudad: 'Springfield' }
+  ordenantes: any[] = [];
+  ordenanteSeleccionado: any = {
+    NombreOrdenante: '',
+    ApPaterno: '',
+    ApMaterno: '',
+    Sexo: '',
+    FechaNacimiento: '',
+    NumeroCuenta: '',
+    RFCOperador: '',
+    Telefono: [{ Numero: '' }],
+    Direccion: {
+      Calle: '',
+      NumeroExterior: '',
+      NumeroInterior: '',
+      Colonia: '',
+      Ciudad: ''
     },
-    {
-      id: '2',
-      NombreOrdenante: 'Ana',
-      ApPaterno: 'López',
-      ApMaterno: 'Martínez',
-      RFC: 'ANA456',
-      Telefono: [{ Numero: '555-5678' }],
-      Cuenta: { NumeroCuenta: '87654321', Saldo: 2500 },
-      Direccion: { Calle: 'Calle Juarez', Numero: '123', Ciudad: 'Queretaro' }
-    }
-  ];
+    FechaRegistro: new Date().toISOString().split('T')[0],
+    FechaActualizacion: new Date().toISOString().split('T')[0]
+  };
 
-  ordenanteSeleccionado: any = null;
+  constructor(private ordenanteService: OrdenanteService, private router: Router) {}
+
+  ngOnInit() {
+    this.obtenerOrdenantes();
+  }
+
+  obtenerOrdenantes() {
+    this.ordenanteService.obtenerOrdenantes().subscribe(
+      data => {
+        this.ordenantes = data;
+      },
+      error => {
+        console.error('Error al obtener los ordenantes:', error);
+        alert(`Error al obtener los ordenantes: ${error}`);
+      }
+    );
+  }
 
   seleccionarOrdenante(ordenante: any) {
-    this.ordenanteSeleccionado = ordenante;
+    this.ordenanteSeleccionado = { ...ordenante };
   }
 
-  mostrarCuentaPantalla() {
-    if (this.ordenanteSeleccionado) {
-      const url = `/cuenta-dialog?numeroCuenta=${this.ordenanteSeleccionado.Cuenta.NumeroCuenta}&saldo=${this.ordenanteSeleccionado.Cuenta.Saldo}`;
-      window.open(url, 'Cuenta', 'width=600,height=400');
+  modificarOrdenante() {
+    if (this.ordenanteSeleccionado && this.ordenanteSeleccionado.RFCOperador) {
+      // Asegúrate de convertir las fechas a formato ISO 8601
+      this.ordenanteSeleccionado.FechaNacimiento = new Date(this.ordenanteSeleccionado.FechaNacimiento).toISOString();
+      this.ordenanteSeleccionado.FechaActualizacion = new Date().toISOString(); // Si es la fecha actual
+
+      // Asegúrate de que Telefono sea un array
+      if (!Array.isArray(this.ordenanteSeleccionado.Telefono)) {
+        this.ordenanteSeleccionado.Telefono = [this.ordenanteSeleccionado.Telefono];
+      }
+
+      // Elimina el _id si no es necesario
+      delete this.ordenanteSeleccionado._id;
+
+      console.log('Datos a modificar:', this.ordenanteSeleccionado);  // Verifica que los datos sean correctos
+
+      this.ordenanteService.actualizarOrdenante(this.ordenanteSeleccionado.RFCOrdenante, this.ordenanteSeleccionado).subscribe(
+        response => {
+          console.log('Ordenante actualizado', response);
+          alert('Ordenante actualizado');
+          this.obtenerOrdenantes();  // Refrescar la lista después de la actualización
+        },
+        error => {
+          console.error('Error al actualizar el ordenante:', error);
+          alert(`Error al actualizar el ordenante: ${error.message}`);
+        }
+      );
     } else {
-      alert('Selecciona un ordenante primero.');
+      alert('Selecciona un ordenante para modificar');
     }
   }
 
-  mostrarDireccionPantalla() {
-    if (this.ordenanteSeleccionado) {
-      const url = `/direccion-dialog?calle=${this.ordenanteSeleccionado.Direccion.Calle}&numero=${this.ordenanteSeleccionado.Direccion.Numero}&ciudad=${this.ordenanteSeleccionado.Direccion.Ciudad}`;
-      window.open(url, 'Dirección', 'width=600,height=400');
+  eliminarOrdenante() {
+    if (this.ordenanteSeleccionado && this.ordenanteSeleccionado.RFCOrdenante) {
+      this.ordenanteService.eliminarOrdenante(this.ordenanteSeleccionado.RFCOrdenante).subscribe(
+        response => {
+          console.log('Ordenante eliminado', response);
+          alert('Ordenante eliminado');
+          this.obtenerOrdenantes();  // Refrescar la lista después de eliminar
+        },
+        error => {
+          console.error('Error al eliminar el ordenante:', error);
+          alert(`Error al eliminar el ordenante: ${error}`);
+        }
+      );
     } else {
-      alert('Selecciona un ordenante primero.');
+      alert('Selecciona un ordenante para eliminar');
     }
   }
 
   buscarOrdenante() {
     console.log('Buscar ordenante ejecutado.');
-  }
-
-  modificarOrdenante() {
-    console.log('Modificar ordenante ejecutado.');
-  }
-
-  eliminarOrdenante() {
-    console.log('Eliminar ordenante ejecutado.');
+    // Lógica para buscar el ordenante
   }
 }
