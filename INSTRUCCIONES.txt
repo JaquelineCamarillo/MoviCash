@@ -1,0 +1,113 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CREDENCIALES PARA ACCEDER A MOVICASH
+
+"CorreoElectronico": "mmovicash@gmail.com",
+    "Password": "fbccc08c7a69"
+
+NOTA: !!NO RESTABLESCAN LA CONTRASE;A !!
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CREDENCIALES PARA ACCEDER A GMAIL 
+
+"CorreoElectronico": "mmovicash@gmail.com",
+    "Password": "Linux123"
+
+NOTA: !!!EL CORREO CON EL CODIGO BUSQUENLO EN LA SECCION DE SPAM
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+EJEMPLO DE if ASIENDO USO DEL SERVICIO DE ALERTAS PARA MANEJO DE ERRORES 
+
+import { AdvertenciaService } from '../../services/advertencia.service'; // Servicio para manejar los mensajes de advertencia
+
+
+validarDatos() {
+    // Si el nombre está vacío, mostramos un mensaje de error
+    if (!this.nombre) {
+      // Llamada al servicio para mostrar un mensaje de error
+      this.advertenciaService.mostrarError('Error', 'Por favor, ingrese un nombre.');
+      return;
+    }
+
+    // Si la edad no está especificada, mostramos un mensaje de error
+    if (this.edad === null || this.edad < 18) {
+      // Llamada al servicio para mostrar un mensaje de error
+      this.advertenciaService.mostrarError('Error', 'La edad debe ser mayor o igual a 18 años.');
+      return;
+    }
+
+    // Si todo es válido, mostramos un mensaje de éxito (podemos usar el mismo servicio)
+    // Llamada al servicio para mostrar un mensaje de éxito
+    this.advertenciaService.mostrarError('Éxito', 'Datos validados correctamente.');
+  }
+} 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+FLUJO DE TRABAJO 
+
+en los componentes PANTALLA ADMIN y PANTALLA ORDENANTES empezaran a montar sus componentes dándole estructura al flujo de la app 
+
+Nota: el token JWT se encuentra en la variable "token"
+const token = localStorage.getItem('token');
+
+SE ENCUENTRAN EN CARPETAS SEPARADAS 
+PANTALLAS_ADMIN   // DENTRO DE ESA CARPETA IRAN TODOS LOS COMPONENTES QUE TENGAN QUE VER CON EL FLUJE DE ADMIN 
+PANTALLAS_ORDENANTE   // DENTRO DE ESA CARPETA IRAN TODOS LOS COMPONENTES QUE TENGAN QUE VER CON EL FLUJE DE ORDENANTES
+
+!!!! NO MONTES TUS COMPONENTES EN LA CARPETA  "components"
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CARPETA SERVICES 
+
+dentro de esa carpeta encontraran 2 carpetas ADMINISTRADOR y ORDENANTES
+
+dentro de cada carpeta irán los servicios que requiera cada roll
+
+ejemplo:
+
+admin.service.ts // este servicio le pertenece a admin entonces debería de ir dentro de la carpeta ADMINISTRADOR
+ordenante.service.ts // este servicio le pertenece a admin entonces debería de ir dentro de la carpeta ORDENANTE
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+DECLARACION DE RUTAS 
+
+En el código hay un apartado con etiquetas para poner las rutas dentro de la sección del flujo que corresponde por roll 
+
+ejemplo:
+
+// RUTAS PARA ADMIN 
+
+(AQUI VAN TODAS LAS RUTAS QUE TIENE QUE VER CON EL FLUJO DE LAS PANTALLAS DEL ADMINISTRADOR )
+
+//RUTAS PARA ORDENANTE 
+
+(AQUI VAN TODAS LAS RUTAS QUE TIENE QUE VER CON EL FLUJO DE LAS PANTALLAS DEL ORDENANDE  )
+
+nota: NO IPORTA QUE PANTALLA SEA SI LE PERTENESE AL FLUJO DE ADMIN SE PONE EN // RUTAS PARA ADMIN 
+NO IPORTA QUE PANTALLA SEA SI LE PERTENESE AL FLUJO DE ORDENANRES SE PONE EN //RUTAS PARA ORDENANTE 
+
+DECLAREN LAS RUTAS DE FORMA TRADICIONAL CON PATHS 
+!!NO LAS PROTEJAN !!
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+REGLAS DE TRABAJO 
+
+en cualquier programación que agas de entrada de datos deveras de respetas tal cual esta escrito el ROLL 
+
+'Ordenante'
+'Admin'
+
+esto es para evitar conflicto con las rutas protegidas 
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+USO DE IMAGENES
+
+Para el uso de cualquier imagen deve de ser en formato SVG y tiene que estar en la carpeta public 
+
+///////////////////////////////////////////////////////////////////
+
+cualquier duda díganme en corto 
+
+
