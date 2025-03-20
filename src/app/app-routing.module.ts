@@ -28,7 +28,7 @@ const routes: Routes = [
       data: { role: 'Admin' } 
     },
     {
-      path: 'pantalla-gestionAdmin', 
+      path: 'pantalla-gestion-admin', 
       component: PantallaGestionAdminComponent, 
       canActivate: [AuthGuard], 
       data: { role: 'Admin' } 

@@ -12,12 +12,10 @@ import { PantallaLoginComponent } from './components/pantalla-login/pantalla-log
 import { PantallaAdminComponent } from './PANTALLAS_ADMIN/pantalla-admin/pantalla-admin.component';
 import { PantallaBuenIntentoComponent } from './components/pantalla-buen-intento/pantalla-buen-intento.component';
 import { AdvertenciaComponent } from './components/advertencia/advertencia.component';
-
+import { PantallaGestionOrdenanteComponent } from './PANTALLAS_OPERADOR/pantalla-gestion-ordenante/pantalla-gestion-ordenante.component';
 import { MatCardModule } from '@angular/material/card';
 import { PantallaGestionAdminComponent } from './PANTALLAS_ADMIN/pantalla-gestion-admin/pantalla-gestion-admin.component';
 import { PantallaGestionOperadorComponent } from './PANTALLAS_ADMIN/pantalla-gestion-operador/pantalla-gestion-operador.component';
-import { PantallaOperadorComponent } from './PANTALLAS_OPERADOR/pantalla-operador/pantalla-operador.component';
-import { PantallaGestionOrdenanteComponent } from './PANTALLAS_OPERADOR/pantalla-gestion-ordenante/pantalla-gestion-ordenante.component';
 
 @NgModule({
   declarations: [
@@ -28,10 +26,8 @@ import { PantallaGestionOrdenanteComponent } from './PANTALLAS_OPERADOR/pantalla
     PantallaAdminComponent,
     PantallaBuenIntentoComponent,
     AdvertenciaComponent,
-    PantallaGestionAdminComponent,
     PantallaGestionOperadorComponent,
-    PantallaOperadorComponent,
-    PantallaGestionOrdenanteComponent
+    PantallaGestionAdminComponent
     
   ],
   imports: [
