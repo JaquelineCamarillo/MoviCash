@@ -18,7 +18,8 @@ const routes: Routes = [
     { path: 'pantalla-buen-intento', component: PantallaBuenIntentoComponent }, 
     { path: 'pantalla-verificacion-codigo', component: PantallaVerificacionCodigoComponent }, 
     { path: 'pantalla-gestion-operador', component: PantallaGestionOperadorComponent }, 
-
+    
+    { path: 'pantalla-gestion-ordenante', component: PantallaGestionOrdenanteComponent }, 
 
   // RUTAS ADMINISTRADOR  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
     {
@@ -48,6 +49,7 @@ const routes: Routes = [
       canActivate: [AuthGuard], 
       data: { role: 'Operador' } 
     },
+  
 ];
 
 @NgModule({

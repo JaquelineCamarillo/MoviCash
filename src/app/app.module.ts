@@ -16,6 +16,8 @@ import { PantallaGestionOrdenanteComponent } from './PANTALLAS_OPERADOR/pantalla
 import { MatCardModule } from '@angular/material/card';
 import { PantallaGestionAdminComponent } from './PANTALLAS_ADMIN/pantalla-gestion-admin/pantalla-gestion-admin.component';
 import { PantallaGestionOperadorComponent } from './PANTALLAS_ADMIN/pantalla-gestion-operador/pantalla-gestion-operador.component';
+import { ReactiveFormsModule } from '@angular/forms'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { PantallaGestionOperadorComponent } from './PANTALLAS_ADMIN/pantalla-ges
     PantallaBuenIntentoComponent,
     AdvertenciaComponent,
     PantallaGestionOperadorComponent,
-    PantallaGestionAdminComponent
+    PantallaGestionAdminComponent,
+    PantallaGestionOrdenanteComponent
     
   ],
   imports: [
@@ -37,9 +40,9 @@ import { PantallaGestionOperadorComponent } from './PANTALLAS_ADMIN/pantalla-ges
     HttpClientModule,
     FormsModule ,
     MatCardModule ,
-    MatIconModule 
-
-
+    MatIconModule ,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     provideClientHydration(),

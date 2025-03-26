@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../enviroments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class OperadorService {
+  //Ruta general para consultar alguna de las rutas del ordenante
+  private apiUrl = `${environment.baseUrl}/ordenante`;
+
+
   private apiUrlOperator = 'http://localhost:8090/operator';   // Ruta base para operaciones sobre operadores
 
   constructor(private http: HttpClient) { }
@@ -34,4 +40,10 @@ export class OperadorService {
   eliminarOperador(RFC: string): Observable<any> {
     return this.http.delete(`${this.apiUrlOperator}/${RFC}`);
   }
+
+  //Crear Ordenante
+  crearOrdenante(ordenante: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/createOrdenante`, ordenante);
+  }
+
 }
