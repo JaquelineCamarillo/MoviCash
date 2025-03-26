@@ -3,7 +3,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http'; 
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { PantallaRecuperacionComponent } from './PANTALLAS_ADMIN/pantalla-recuperacion/pantalla-recuperacion.component';
@@ -16,6 +16,13 @@ import { PantallaGestionOrdenanteComponent } from './PANTALLAS_OPERADOR/pantalla
 import { MatCardModule } from '@angular/material/card';
 import { PantallaGestionAdminComponent } from './PANTALLAS_ADMIN/pantalla-gestion-admin/pantalla-gestion-admin.component';
 import { PantallaGestionOperadorComponent } from './PANTALLAS_ADMIN/pantalla-gestion-operador/pantalla-gestion-operador.component';
+import { PanelOperadorComponent } from './prueba/panel-operador/panel-operador.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { GestionOrdenantesComponent } from './prueba/gestion-ordenantes/gestion-ordenantes.component';
+import { AltOrdenantesComponent } from './prueba/alt-ordenantes/alt-ordenantes.component';
+import { NavegacionComponent } from './prueba/navegacion/navegacion.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +34,12 @@ import { PantallaGestionOperadorComponent } from './PANTALLAS_ADMIN/pantalla-ges
     PantallaBuenIntentoComponent,
     AdvertenciaComponent,
     PantallaGestionOperadorComponent,
-    PantallaGestionAdminComponent
-    
+    PantallaGestionAdminComponent,
+    PanelOperadorComponent,
+    GestionOrdenantesComponent,
+    AltOrdenantesComponent,
+    NavegacionComponent
+
   ],
   imports: [
     BrowserModule,
@@ -37,13 +48,15 @@ import { PantallaGestionOperadorComponent } from './PANTALLAS_ADMIN/pantalla-ges
     HttpClientModule,
     FormsModule ,
     MatCardModule ,
-    MatIconModule 
-
+    MatIconModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule
 
   ],
   providers: [
     provideClientHydration(),
-    provideHttpClient(withFetch())  
+    provideHttpClient(withFetch())
 
   ],
   bootstrap: [AppComponent]

@@ -1,0 +1,23 @@
+.nav-bar {
+  background-color: #184059 !important;
+  color: white !important;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  position: relative;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.spacer {
+  flex: 1;
+}
