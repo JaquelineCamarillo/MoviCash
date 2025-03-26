@@ -24,6 +24,9 @@ const routes: Routes = [
     //solo para pruebas
     { path: 'panel-operador', component: PanelOperadorComponent},
     { path: 'alta-ordenante', component:AltOrdenantesComponent },
+    
+    { path: 'pantalla-gestion-ordenante', component: PantallaGestionOrdenanteComponent }, 
+
 
   // RUTAS ADMINISTRADOR  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     {
@@ -53,6 +56,7 @@ const routes: Routes = [
       canActivate: [AuthGuard],
       data: { role: 'Operador' }
     },
+  
 ];
 
 @NgModule({

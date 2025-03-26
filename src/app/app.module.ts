@@ -16,6 +16,7 @@ import { PantallaGestionOrdenanteComponent } from './PANTALLAS_OPERADOR/pantalla
 import { MatCardModule } from '@angular/material/card';
 import { PantallaGestionAdminComponent } from './PANTALLAS_ADMIN/pantalla-gestion-admin/pantalla-gestion-admin.component';
 import { PantallaGestionOperadorComponent } from './PANTALLAS_ADMIN/pantalla-gestion-operador/pantalla-gestion-operador.component';
+
 import { PanelOperadorComponent } from './prueba/panel-operador/panel-operador.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
@@ -23,6 +24,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { GestionOrdenantesComponent } from './prueba/gestion-ordenantes/gestion-ordenantes.component';
 import { AltOrdenantesComponent } from './prueba/alt-ordenantes/alt-ordenantes.component';
 import { NavegacionComponent } from './prueba/navegacion/navegacion.component';
+import { ReactiveFormsModule } from '@angular/forms'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +42,8 @@ import { NavegacionComponent } from './prueba/navegacion/navegacion.component';
     PanelOperadorComponent,
     GestionOrdenantesComponent,
     AltOrdenantesComponent,
-    NavegacionComponent
+    NavegacionComponent,
+    PantallaGestionOrdenanteComponent
 
   ],
   imports: [
@@ -52,6 +57,8 @@ import { NavegacionComponent } from './prueba/navegacion/navegacion.component';
     MatToolbarModule,
     MatMenuModule,
     MatButtonModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
 
   ],
   providers: [
